@@ -1,0 +1,16 @@
+---
+version: '3'
+
+services:
+  alt-php:
+    build: ./docker
+    container_name: alt-php
+    ports:
+      - 8080:80
+    volumes:
+      - .:/var/www
+      - ./.data/app/logs:/var/log/nginx
+      - ./.data/composer:/root/.composer
+    entrypoint: /usr/bin/app/entrypoint.sh
+    labels:
+      tag: alt-php

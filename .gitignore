@@ -1,0 +1,12 @@
+.idea
+.cache
+.php_cs.cache
+.DS_Store
+composer.lock
+_php_opencv_ide_helper.php
+
+/coverage/
+/vendor/
+/.data
+/images
+/results

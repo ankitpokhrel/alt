@@ -1,0 +1,10 @@
+.DS_Store
+.php_cs.cache
+.scrutinizer.yml
+.travis.yml
+.gitignore
+.dockerignore
+
+.idea/
+docker/
+.git/
