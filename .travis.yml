@@ -1,0 +1,13 @@
+---
+language: php
+
+php:
+  - '7.1'
+  - '7.2'
+
+before_install:
+  - bash docker/bin/opencv.sh
+  - bash docker/bin/php-opencv.sh
+  - composer self-update && composer install
+
+script: ./vendor/bin/phpunit --coverage-text
