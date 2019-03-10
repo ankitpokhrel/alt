@@ -9,3 +9,4 @@ phpize
 
 make
 make install
+make test

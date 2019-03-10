@@ -1,13 +1,12 @@
 ---
 language: php
+sudo: required
 
-php:
-  - '7.1'
-  - '7.2'
+services:
+  - docker
 
 before_install:
-  - bash docker/bin/opencv.sh
-  - bash docker/bin/php-opencv.sh
-  - composer self-update && composer install
+  - docker build -t ankitpokhrel/alt docker/
 
-script: ./vendor/bin/phpunit --coverage-text
+script:
+  - docker run ankitpokhrel/alt bash -c "/usr/bin/app/travis.sh"
