@@ -8,6 +8,12 @@ A very simple PHP library to generate alternative (alt) text for images using pr
 
 > This nifty little tool is inspired by [facebook alt text generation](https://code.fb.com/ios/under-the-hood-building-accessibility-tools-for-the-visually-impaired-on-facebook/) process.
 
+### Example
+| | | | |
+|-|-|-|-|
+| <img src="tests/images/workplace.jpg" width="300" alt="Image may contain: cup, potted plant, laptop"> <br>_Image may contain: cup, potted, laptop_ | <img src="tests/images/people.jpg" width="300" alt="Image may contain: 6 person, cup, laptop"> <br>_Image may contain: 6 person, cup, laptop_ | <img src="tests/images/street.jpg" width="300" alt="Image may contain: 5 person, car, motorcycle"> <br>_Image may contain: 5 person, car, motorcycle_ | <img src="tests/images/london.jpg" width="300" alt="Image may contain: 1 person, car, bus, truck, traffic light"> <br>_Image may contain: 1 person, car, bus, truck, traffic light_ |
+| <img src="tests/images/home.jpg" width="300" alt="Image may contain: chair, couch"> <br>_Image may contain: chair, couch_ | <img src="tests/images/pizza.jpg" width="300" alt="Image may contain: pizza, dining table"> <br>_Image may contain: pizza, dining table_ | <img src="tests/images/dog.jpg" width="300" alt="Image may contain: dog"> <br>_Image may contain: dog_ | <img src="tests/images/birds.jpg" width="300" alt="Image may contain: bird"> <br>_Image may contain: bird_ |
+
 ### Installation
 
 > Requires: PHP 7.1.3+, [OpenCV](https://opencv.org/), [PHP OpenCV](https://github.com/php-opencv/php-opencv)  
@@ -62,9 +68,3 @@ Default text is used if the model is not able to predict any objects within a gi
 ```php
 $alt->setDefaultText('Some scenery.');
 ```
-
-### Examples
-| | | | |
-|-|-|-|-|
-| <img src="tests/images/workplace.jpg" width="300" alt="Image may contain: cup, potted plant, laptop"> <br>_Image may contain: cup, potted, laptop_ | <img src="tests/images/people.jpg" width="300" alt="Image may contain: 6 person, cup, laptop"> <br>_Image may contain: 6 person, cup, laptop_ | <img src="tests/images/street.jpg" width="300" alt="Image may contain: 5 person, car, motorcycle"> <br>_Image may contain: 5 person, car, motorcycle_ | <img src="tests/images/london.jpg" width="300" alt="Image may contain: 1 person, car, bus, truck, traffic light"> <br>_Image may contain: 1 person, car, bus, truck, traffic light_ |
-| <img src="tests/images/home.jpg" width="300" alt="Image may contain: chair, couch"> <br>_Image may contain: chair, couch_ | <img src="tests/images/pizza.jpg" width="300" alt="Image may contain: pizza, dining table"> <br>_Image may contain: pizza, dining table_ | <img src="tests/images/dog.jpg" width="300" alt="Image may contain: dog"> <br>_Image may contain: dog_ | <img src="tests/images/birds.jpg" width="300" alt="Image may contain: bird"> <br>_Image may contain: bird_ |
