@@ -1,10 +1,12 @@
-# alt
+# alt &nbsp;[![Build Status](https://img.shields.io/travis/ankitpokhrel/master.svg?style=flat-square)](https://travis-ci.org/ankitpokhrel/alt)
 
 _Automatic alternative (alt) text for images using object detection with pre-trained model._
 
 ### Overview
 
-A very simple PHP library to generate alternative (alt) text for images using pre-trained tensorflow model to detect objects in an image. These texts can provide context about image to visitors who are unable to see images in their browser for whatever reasons. Alt texts can also be picked up by screen readers to convert it to speech, thus, providing additional context to visually impaired people and enhanching our user experience.
+A very simple PHP library to generate alternative (alt) text for images using pre-trained tensorflow model to detect objects in an image. These texts can provide context about image to visitors who are unable to see images in their browser for whatever reasons. Alt texts can also be picked up by screen readers to convert it to speech, thus, providing additional context to visually impaired people and enhancing our user experience.
+
+> This nifty little tool is inspired by [facebook alt text generation](https://code.fb.com/ios/under-the-hood-building-accessibility-tools-for-the-visually-impaired-on-facebook/) process.
 
 ### Installation
 
@@ -58,7 +60,7 @@ $alt->setCountable(['person', 'dog'])->alt(); // Image may contain: 5 person, 2 
 Default text is used if the model is not able to predict any objects within a given threshold. Default default text is `No photo description available.`.
 
 ```php
-$alt->setDefaultText('Some scenary.');
+$alt->setDefaultText('Some scenery.');
 ```
 
 ### Examples

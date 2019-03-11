@@ -1,0 +1,12 @@
+---
+language: php
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t ankitpokhrel/alt docker/
+
+script:
+  - docker run ankitpokhrel/alt bash -c "/usr/bin/app/travis.sh"
