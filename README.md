@@ -1,4 +1,4 @@
-# alt &nbsp;[![Build Status](https://img.shields.io/travis/ankitpokhrel/master.svg?style=flat-square)](https://travis-ci.org/ankitpokhrel/alt)
+# alt &nbsp;[![Build Status](https://img.shields.io/travis/ankitpokhrel/alt.svg?style=flat-square)](https://travis-ci.org/ankitpokhrel/alt)
 
 _Automatic alternative (alt) text for images using object detection with pre-trained model._
 
