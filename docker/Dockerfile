@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM devilbox/php-fpm:7.4-prod
 LABEL maintainer="Ankit Pokhrel <hello@ankit.pl>"
 
 ENV LANG C.UTF-8
@@ -9,10 +9,8 @@ RUN rm -rf /var/lib/apt/lists/* && apt-get clean
 
 RUN apt-get update --fix-missing && apt-get -y upgrade
 RUN apt-get install -y software-properties-common build-essential
-RUN add-apt-repository -y ppa:ondrej/php
-RUN apt-get update --fix-missing
 
-# Install php, nginx and other dependencies
+# Install dependencies.
 RUN apt-get -y install rsyslog \
                        rsyslog-gnutls \
                        supervisor \
@@ -24,23 +22,8 @@ RUN apt-get -y install rsyslog \
                        cmake \
                        qt5-default \
                        vim \
-                       python3-pip \
-                       php7.1-fpm \
-                       php7.1-cli \
-                       php7.1-dev \
-                       php7.1-gd \
-                       php7.1-imap \
-                       php7.1-intl \
-                       php7.1-json \
-                       php7.1-mcrypt \
-                       php7.1-mbstring \
-                       php7.1-ldap \
-                       php7.1-zip \
-                       php7.1-xml \
-                       php-xdebug \
-                       php7.1-mysql \
-                       php7.1-soap \
-                       php7.1-curl && \
+                       unzip \
+                       python3-pip && \
                        apt-get clean && \
                        rm -rf /var/lib/apt/lists/*
 
@@ -51,16 +34,15 @@ RUN chmod +x /usr/bin/app/*
 # Install OpenCV4.
 RUN /usr/bin/app/opencv.sh
 
-# Install PHP OpenCV.
-RUN /usr/bin/app/php-opencv.sh
+# Install tensorflow.
+RUN /usr/bin/app/tensorflow.sh
 
 # Install composer.
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && chmod +x /usr/local/bin/composer
 
 # Add configs.
-ADD ./configs/www.conf /etc/php/7.1/fpm/pool.d/www.conf
-ADD ./configs/php.ini /etc/php/7.1/fpm/conf.d/99-custom.ini
-ADD ./configs/php.ini /etc/php/7.1/cli/conf.d/99-custom.ini
+ADD ./configs/www.conf /usr/local/etc/php-fpm.d/www.conf.default
+ADD ./configs/php.ini /usr/local/etc/php/conf.d/99-custom.ini
 ADD ./configs/nginx.conf /etc/nginx/nginx.conf
 ADD ./configs/supervisord.conf /etc/supervisord.conf
 
