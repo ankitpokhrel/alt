@@ -1,4 +1,10 @@
+# This project is now available at [captionai.co](https://captionai.co)
+
+> [CaptionAI](https://captionai.co) effortlessly generates automatic image captions (alternate text), description, tags, and helps you categorize images using the power of AI.
+
 # alt &nbsp;[![Build Status](https://img.shields.io/travis/ankitpokhrel/alt/master.svg?style=flat-square)](https://travis-ci.org/ankitpokhrel/alt)
+
+> This project is no longer maintained.
 
 _Automatic alternative (alt) text for images using object detection with pre-trained model._
 
